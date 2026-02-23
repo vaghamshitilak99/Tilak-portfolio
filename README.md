@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -147,7 +147,7 @@
     <section class="hero" id="about">
         <h1>Tilak Vaghamshi</h1>
         <p><strong>Business Operations Analyst | 3.2 Years at TCS eServe</strong></p>
-        <p>Expert in process automation and mortgage regulatory compliance. [span_0](start_span)[span_1](start_span)[span_2](start_span)I specialize in turning complex data into streamlined, high-accuracy workflows[span_0](end_span)[span_1](end_span)[span_2](end_span).</p>
+        <p>Expert in process automation and mortgage regulatory compliance. [cite_start]I specialize in turning complex data into streamlined, high-accuracy workflows[cite: 1, 4, 11].</p>
         
         <div class="btn-group">
             <a href="mailto:vaghamshitilak99@gmail.com" class="primary-btn"><i class="fas fa-paper-plane"></i> Hire Me</a>
@@ -156,10 +156,10 @@
     </section>
 
     <div class="stats-container">
-        [span_3](start_span)[span_4](start_span)<div class="stat-item"><h2>99%+</h2><p>Accuracy Rate[span_3](end_span)[span_4](end_span)</p></div>
-        [span_5](start_span)[span_6](start_span)<div class="stat-item"><h2>40%</h2><p>Manual Entry Reduced[span_5](end_span)[span_6](end_span)</p></div>
-        [span_7](start_span)[span_8](start_span)<div class="stat-item"><h2>35%</h2><p>Error Reduction[span_7](end_span)[span_8](end_span)</p></div>
-        [span_9](start_span)[span_10](start_span)<div class="stat-item"><h2>30%</h2><p>Faster Approvals[span_9](end_span)[span_10](end_span)</p></div>
+        [cite_start]<div class="stat-item"><h2>99%+</h2><p>Accuracy Rate [cite: 5, 15]</p></div>
+        [cite_start]<div class="stat-item"><h2>40%</h2><p>Manual Entry Reduced [cite: 8, 17]</p></div>
+        [cite_start]<div class="stat-item"><h2>35%</h2><p>Error Reduction [cite: 16, 49]</p></div>
+        [cite_start]<div class="stat-item"><h2>30%</h2><p>Faster Approvals [cite: 9, 20]</p></div>
     </div>
 
     <section class="section-padding" id="experience">
@@ -167,27 +167,27 @@
         
         <div class="exp-card">
             <div class="exp-header">
-                <div><span class="role">Researcher</span> | [span_11](start_span)<span class="company">TCS eServe (Rocket Companies, Inc.)[span_11](end_span)</span></div>
-                <div class="text-muted">June 2024 — Present | [span_12](start_span)Gandhinagar[span_12](end_span)</div>
+                <div><span class="role">Researcher</span> | [cite_start]<span class="company">TCS eServe (Rocket Companies, Inc.) [cite: 14]</span></div>
+                <div class="text-muted">June 2024 — Present | [cite_start]Gandhinagar [cite: 14]</div>
             </div>
             <ul class="bullet-list">
-                [span_13](start_span)[span_14](start_span)[span_15](start_span)<li>Manage 45+ research profiles daily with 99%+ validation accuracy[span_13](end_span)[span_14](end_span)[span_15](end_span).</li>
-                [span_16](start_span)[span_17](start_span)[span_18](start_span)<li>Reduced inter-department coordination errors by 35% through software implementation[span_16](end_span)[span_17](end_span)[span_18](end_span).</li>
-                [span_19](start_span)[span_20](start_span)[span_21](start_span)<li>Achieved 25% improvement in response speed via redesigned workflows[span_19](end_span)[span_20](end_span)[span_21](end_span).</li>
-                [span_22](start_span)[span_23](start_span)[span_24](start_span)<li>Automated documentation, eliminating 40% of manual data entry[span_22](end_span)[span_23](end_span)[span_24](end_span).</li>
+                [cite_start]<li>Manage 45+ research profiles daily with 99%+ validation accuracy[cite: 5, 15, 48].</li>
+                [cite_start]<li>Reduced inter-department coordination errors by 35% through software implementation[cite: 16, 49, 85].</li>
+                [cite_start]<li>Achieved 25% improvement in response speed via redesigned workflows[cite: 16, 49, 85].</li>
+                [cite_start]<li>Automated documentation, eliminating 40% of manual data entry[cite: 17, 50, 86].</li>
             </ul>
         </div>
 
         <div class="exp-card">
             <div class="exp-header">
-                <div><span class="role">Process Associate</span> | [span_25](start_span)<span class="company">TCS eServe (Mr. Cooper)[span_25](end_span)</span></div>
-                <div class="text-muted">Dec 2023 — June 2024 | [span_26](start_span)[span_27](start_span)Gandhinagar[span_26](end_span)[span_27](end_span)</div>
+                <div><span class="role">Process Associate</span> | [cite_start]<span class="company">TCS eServe (Mr. Cooper) [cite: 18]</span></div>
+                <div class="text-muted">Dec 2023 — June 2024 | [cite_start]Gandhinagar [cite: 18, 51]</div>
             </div>
             <ul class="bullet-list">
-                [span_28](start_span)[span_29](start_span)[span_30](start_span)<li>Processed 500+ monthly foreclosure documents with 99%+ accuracy[span_28](end_span)[span_29](end_span)[span_30](end_span).</li>
-                [span_31](start_span)[span_32](start_span)[span_33](start_span)<li>Deployed IT-driven solutions cutting approval time by 30%[span_31](end_span)[span_32](end_span)[span_33](end_span).</li>
-                [span_34](start_span)[span_35](start_span)[span_36](start_span)<li>Conducted compliance audits across 150+ documents to resolve discrepancies[span_34](end_span)[span_35](end_span)[span_36](end_span).</li>
-                [span_37](start_span)[span_38](start_span)[span_39](start_span)<li>Trained 10+ team members, reducing ramp-up time by 3 weeks[span_37](end_span)[span_38](end_span)[span_39](end_span).</li>
+                [cite_start]<li>Processed 500+ monthly foreclosure documents with 99%+ accuracy[cite: 5, 19, 52].</li>
+                [cite_start]<li>Deployed IT-driven solutions cutting approval time by 30%[cite: 9, 20, 53].</li>
+                [cite_start]<li>Conducted compliance audits across 150+ documents to resolve discrepancies[cite: 21, 54, 90].</li>
+                [cite_start]<li>Trained 10+ team members, reducing ramp-up time by 3 weeks[cite: 22, 55, 91].</li>
             </ul>
         </div>
     </section>
@@ -196,7 +196,7 @@
         <h2 class="section-title">Technical Expertise</h2>
         <div class="details-grid">
             <div class="detail-box">
-                [span_40](start_span)<h3>Proficiencies[span_40](end_span)</h3>
+                [cite_start]<h3>Proficiencies [cite: 29, 30]</h3>
                 <div class="skill-bar-container">
                     <div class="skill-label"><span>Advanced Excel (Macros/VBA)</span><span>95%</span></div>
                     <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
@@ -211,12 +211,12 @@
                 </div>
             </div>
             <div class="detail-box">
-                [span_41](start_span)[span_42](start_span)[span_43](start_span)<h3>Key Recognitions[span_41](end_span)[span_42](end_span)[span_43](end_span)</h3>
+                [cite_start]<h3>Key Recognitions [cite: 35, 69, 105]</h3>
                 <ul class="bullet-list">
-                    [span_44](start_span)<li>AI Idea Igniter Award (2025)[span_44](end_span)</li>
-                    [span_45](start_span)<li>Elevate Wings Award (2025)[span_45](end_span)</li>
-                    [span_46](start_span)<li>US Regulatory Compliance Certified (2025)[span_46](end_span)</li>
-                    [span_47](start_span)<li>Service & Commitment Award (2024)[span_47](end_span)</li>
+                    [cite_start]<li>AI Idea Igniter Award (2025) [cite: 35]</li>
+                    [cite_start]<li>Elevate Wings Award (2025) [cite: 69]</li>
+                    [cite_start]<li>US Regulatory Compliance Certified (2025) [cite: 34]</li>
+                    [cite_start]<li>Service & Commitment Award (2024) [cite: 105]</li>
                 </ul>
             </div>
         </div>
@@ -229,13 +229,13 @@
             <p>Open to opportunities in <strong>Australia</strong> and the Asian Timezone.</p>
             <p>Immediate Joiner | Currently in Ahmedabad, Gujarat</p>
             <br>
-            [span_48](start_span)[span_49](start_span)<p><i class="fas fa-phone"></i> +91 8733885500[span_48](end_span)[span_49](end_span)</p>
+            [cite_start]<p><i class="fas fa-phone"></i> +91 8733885500 [cite: 2, 73]</p>
             <a href="mailto:vaghamshitilak99@gmail.com" class="primary-btn" style="margin-top: 2rem;">Email Me Directly</a>
         </div>
     </section>
 
     <footer style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
-        &copy; 2026 Tilak Vaghamshi | [span_50](start_span)[span_51](start_span)[span_52](start_span)BBA Graduate - JG University[span_50](end_span)[span_51](end_span)[span_52](end_span)
+        &copy; 2026 Tilak Vaghamshi | [cite_start]BBA Graduate - JG University [cite: 32, 64, 100]
     </footer>
 
 </body>
