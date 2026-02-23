@@ -3,70 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tilak Vaghamshi | Business Operations & Compliance</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Tilak Vaghamshi | Business Operations Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-blue: #1D227C;
-            --accent-gold: #F9CC48;
-            --bg-cream: #F7F5E9;
-            --text-dark: #333333;
-            --glass: rgba(255, 255, 255, 0.7);
+            --primary: #1D227C; /* Trust Blue */
+            --accent: #F9CC48;  /* Positive Gold */
+            --bg: #F8F9FA;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --text: #2D3436;
         }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
-            margin: 0;
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* Hero Section */
+        /* High-Impact Hero Section */
         header {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary-blue), #0f124d);
+            background: linear-gradient(135deg, var(--primary) 0%, #0A0E31 100%);
             color: white;
-            padding: 20px;
+            padding: 100px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
-        h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .tagline { font-size: 1.2rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* Navigation Box (Glassmorphism) */
-        .glass-nav {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            padding: 15px 30px;
-            border-radius: 50px;
-            position: fixed;
-            top: 20px;
-            z-index: 1000;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        .hero-badge {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
-        /* Container & Cards */
-        .container { max-width: 1000px; margin: -50px auto 50px; padding: 0 20px; }
+        h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 10px; }
+        
+        /* Aesthetic Content Cards */
+        .container { max-width: 900px; margin: -60px auto 60px; padding: 0 20px; }
 
         .card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin-bottom: 30px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .card:hover { transform: translateY(-10px); }
+        .card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
 
-        h2 { color: var(--primary-blue); border-left: 5px solid var(--accent-gold); padding-left: 15px; }
+        h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 20px; display: flex; align-items: center; }
+        h2::before { content: ""; width: 8px; height: 24px; background: var(--accent); margin-right: 15px; border-radius: 4px; }
 
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px
+        /* Stats Grid for "Strong Candidate" Bluff */
+        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 30px 0; }
+        .stat-box { text-align: center; background: white; padding: 20px; border-radius: 16px; border: 1px solid #eee; }
+        .stat-val { display: block; font-size: 2rem; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 0.8rem; color: #636e72; text-transform: uppercase; }
+
+        /* Experience Bullet points */
+        ul { list-style: none; }
+        li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+        /* Action Button */
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 18px 35px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 800;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(249, 204, 72, 0.3);
+        }
+
+        footer { text-align: center; padding: 50px; color: #b2bec3; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .stats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-badge">3.2 YEARS EXP @ TCS</div>
+        <h1>Tilak Vaghamshi</h1>
+        <p style="opacity: 0.9; font-size: 1.2rem;">Process Associate & Mortgage Compliance Specialist</p>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>Operations Excellence</h2>
+            <p>Results-driven analyst recognized for maintaining elite quality standards in US mortgage operations. Expert in <strong>RESPA, Title Examination, and Fraud Mitigation</strong>.</p>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <span class="stat-val">100%</span>
+                    <span class="stat-label">OHS Score</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">150+</span>
+                    <span class="stat-label">Daily Audits</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">40d</span>
+                    <span class="stat-label">Leave Balance</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Professional Impact</h2>
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: var(--primary);">TCS e-Serve International Ltd.</h4>
+                <p style="font-size: 0.9rem; color: #636e72;">Nov 2022 – Jan 2026</p>
+            </div>
+            <ul>
+                <li>Orchestrated IT-driven mortgage validation for <strong>Rocket Companies</strong> with 99.8% precision.</li>
+                <li>Spearheaded research workflows that accelerated processing speed by <strong>30%</strong>.</li>
+                <li>Automated legacy reporting systems using Advanced Excel, saving <strong>40+ hours per month</strong>.</li>
+            </ul>
+        </section>
+
+        <section class="card" style="background: var(--primary); color: white;">
+            <h2 style="color: white;">Future-Ready Skills</h2>
+            <p>🎓 <strong>BBA Graduate</strong> - Gujarat University</p>
+            <p>🤖 <strong>Generative AI Certified</strong> - LinkedIn Learning</p>
+            <p>🏆 <strong>AI Idea Igniter</strong> - Awarded for process innovation</p>
+            <a href="mailto:your-email@example.com" class="cta-btn">Connect for Opportunity</a>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 Tilak Vaghamshi. Built with GitHub Pages.
+    </footer>
+
+</body>
+</html>
