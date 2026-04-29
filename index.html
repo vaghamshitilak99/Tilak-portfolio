@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tilak Vaghamshi — KYC & Operations Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN SYSTEM — Editorial BFSI / Compliance dark-cream theme
+   Palette: near-black ink on aged parchment, 
+   with Oxford navy accent + gold rule
+   ============================================================ */
+:root {
+  --ink:     #0e0e0d;
+  --ink-2:   #2a2826;
+  --ink-3:   #5a5754;
+  --ink-4:   #8a8784;
+  --bg:      #f5f2ed;
+  --bg-2:    #ede9e2;
+  --bg-3:    #e4dfd5;
+  --navy:    #0d2340;
+  --navy-2:  #162f52;
+  --navy-3:  #1e3d68;
+  --gold:    #9a7a2c;
+  --gold-2:  #c09b3c;
+  --gold-bg: #faf5e6;
+  --green:   #1a5c36;
+  --red:     #8b1c1c;
+  --rule:    #d4cfc6;
+  --serif:   'DM Serif Display', Georgia, serif;
+  --sans:    'DM Sans', system-ui, sans-serif;
+  --mono:    'DM Mono', monospace;
+  --max:     1100px;
+  --gutter:  clamp(20px, 5vw, 60px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-2); }
+::-webkit-scrollbar-thumb { background: var(--navy); }
+
+/* ---- LINKS ---- */
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--gold); }
+
+/* ======================================================
+   NAV
+   ====================================================== */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--gutter);
+  height: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: box-shadow 0.3s;
+}
+#nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+.nav-logo {
+  font-family: var(--serif);
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+.nav-logo span { color: var(--gold-2); }
+.nav-links {
+  display: flex; gap: 28px; list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-2); }
+.nav-cta {
+  background: var(--gold-2);
+  color: var(--navy) !important;
+  padding: 6px 16px;
+  border-radius: 2px;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+}
+.nav-cta:hover { background: #e0b84a !important; color: var(--navy) !important; }
+
+/* hamburger for mobile */
+.nav-burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: #fff; transition: 0.3s; }
+
+/* ======================================================
+   HERO
+   ====================================================== */
+#hero {
+  padding-top: 56px;
+  min-height: 100vh;
+  background: var(--navy);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  position: relative;
+}
+.hero-bg-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.03) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.03) 40px
+    );
+  pointer-events: none;
+}
+.hero-left {
+  position: relative; z-index: 2;
+  padding: clamp(40px, 8vw, 100px) var(--gutter) clamp(40px, 8vw, 100px) var(--gutter);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block; width: 32px; height: 1px; background: var(--gold-2);
+}
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.hero-name em {
+  font-style: italic;
+  color: var(--gold-2);
+}
+.hero-title {
+  font-family: var(--sans);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  margin-bottom: 32px;
+  letter-spacing: 0.02em;
+}
+.hero-seeking {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(154,122,44,0.4);
+  border-left: 3px solid var(--gold-2);
+  padding: 14px 18px;
+  border-radius: 2px;
+  margin-bottom: 36px;
+}
+.hero-seeking p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.hero-seeking strong {
+  color: var(--gold-2);
+  font-weight: 600;
+}
+.hero-actions {
+  display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px;
+}
+.btn-primary {
+  background: var(--gold-2);
+  color: var(--navy);
+  padding: 12px 28px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+}
+.btn-primary:hover { background: #e0b84a; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(192,155,60,0.35); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+  padding: 12px 28px;
+  border-radius: 2px;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold-2); color: var(--gold-2); }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.hero-stat {
+  background: rgba(255,255,255,0.04);
+  padding: 18px 16px;
+  text-align: center;
+}
+.hero-stat .num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--gold-2);
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+}
+.hero-stat .lbl {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+}
+.hero-right {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px var(--gutter) 40px 0;
+}
+.hero-card {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 36px;
+  max-width: 400px;
+  width: 100%;
+  backdrop-filter: blur(4px);
+}
+.hero-card::before {
+  content: '';
+  position: absolute; top: -1px; left: 32px; right: 32px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
+}
+.hero-photo-placeholder {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-3), var(--navy-2));
+  border: 2px solid var(--gold-2);
+  margin: 0 auto 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: var(--gold-2);
+}
+.hero-card h3 {
+  text-align: center;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+.hero-card .sub {
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.78rem;
+  margin-bottom: 24px;
+  font-family: var(--mono);
+  letter-spacing: 0.06em;
+}
+.card-badges {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px;
+}
+.badge {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  font-family: var(--mono);
+}
+.badge.gold { background: rgba(192,155,60,0.15); border-color: rgba(192,155,60,0.4); color: var(--gold-2); }
+.card-contact { display: flex; flex-direction: column; gap: 8px; }
+.contact-row {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.78rem; color: rgba(255,255,255,0.6);
+}
+.contact-row .icon { width: 28px; text-align: center; color: var(--gold-2); font-size: 1rem; }
+.availability-dot {
+  display: inline-block; width: 8px; height: 8px;
+  background: #4caf7d; border-radius: 50%;
+  animation: pulse-green 2s infinite;
+  margin-right: 6px;
+}
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ======================================================
+   SECTION SCAFFOLDING
+   ====================================================== */
+section { padding: clamp(60px, 8vw, 120px) var(--gutter); }
+.section-inner { max-width: var(--max); margin: 0 auto; }
+.section-header { margin-bottom: 56px; }
+.section-tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-tag::before {
+  content: ''; display: block; width: 24px; height: 1px; background: var(--gold);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  line-height: 1.15;
+  color: var(--ink);
+}
+.section-title em { font-style: italic; color: var(--navy); }
+.section-lead {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  color: var(--ink-3);
+  max-width: 640px;
+  line-height: 1.75;
+}
+
+/* ======================================================
+   TESTIMONIAL — THE QUOTE THAT MUST BE SEEN
+   ====================================================== */
+#testimonial {
+  background: var(--navy);
+  padding: clamp(60px, 8vw, 100px) var(--gutter);
+}
+.testimonial-inner {
+  max-width: 860px; margin: 0 auto; text-align: center;
+}
+.quote-mark {
+  font-family: var(--serif);
+  font-size: 6rem;
+  line-height: 0.5;
+  color: var(--gold-2);
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 24px;
+}
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+  color: #fff;
+  line-height: 1.45;
+  font-style: italic;
+  margin-bottom: 28px;
+}
+.testimonial-attr {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--gold-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   TIMELINE — THE STORY
+   ====================================================== */
+#story { background: var(--bg); }
+.timeline {
+  position: relative;
+  padding-left: 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 160px;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--gold) 50%, var(--navy) 100%);
+}
+.tl-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0;
+  margin-bottom: 56px;
+  position: relative;
+}
+.tl-item:last-child { margin-bottom: 0; }
+.tl-date {
+  padding-right: 40px;
+  text-align: right;
+  padding-top: 4px;
+}
+.tl-date .period {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  letter-spacing: 0.05em;
+  display: block;
+  line-height: 1.4;
+}
+.tl-node {
+  position: absolute;
+  left: 152px;
+  top: 8px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+}
+.tl-node.gold { border-color: var(--gold-2); }
+.tl-node .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--navy); }
+.tl-node.gold .dot { background: var(--gold-2); }
+.tl-content {
+  padding-left: 48px;
+  padding-bottom: 12px;
+}
+.tl-role {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.tl-client {
+  font-size: 0.82rem;
+  color: var(--navy);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: var(--mono);
+}
+.tl-body { font-size: 0.95rem; color: var(--ink-3); line-height: 1.75; margin-bottom: 16px; }
+.tl-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  background: var(--bg-3);
+  border: 1px solid var(--rule);
+  color: var(--ink-3);
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+}
+.promo-banner {
+  background: linear-gradient(135deg, var(--navy), var(--navy-3));
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+  border-left: 3px solid var(--gold-2);
+}
+.promo-banner .star { color: var(--gold-2); font-size: 1rem; }
+
+/* ======================================================
+   GAP / TRANSITION SECTION
+   ====================================================== */
+.tl-gap-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0;
+  margin-bottom: 56px;
+  position: relative;
+}
+.gap-content {
+  padding-left: 48px;
+  padding-bottom: 12px;
+}
+.gap-box {
+  background: var(--gold-bg);
+  border: 1px dashed var(--gold);
+  border-radius: 3px;
+  padding: 20px 24px;
+}
+.gap-box h4 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.gap-box p { font-size: 0.88rem; color: var(--ink-3); line-height: 1.65; }
+
+/* ======================================================
+   WORK SAMPLES (case studies)
+   ====================================================== */
+#work { background: var(--bg-2); }
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.work-card {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+}
+.work-card:hover {
+  border-color: var(--navy);
+  box-shadow: 0 8px 32px rgba(13,35,64,0.1);
+  transform: translateY(-2px);
+}
+.work-card-header {
+  background: var(--navy);
+  padding: 20px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.work-card-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold-2), transparent);
+}
+.work-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+  margin-bottom: 6px;
+}
+.work-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: #fff;
+  line-height: 1.3;
+}
+.work-card-body { padding: 20px 24px; }
+.work-metric-row { display: flex; gap: 20px; margin-bottom: 16px; }
+.work-metric { text-align: center; }
+.work-metric .num {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--navy);
+  display: block;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.work-metric .lbl {
+  font-size: 0.68rem;
+  color: var(--ink-4);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: var(--mono);
+}
+.work-card-body p { font-size: 0.88rem; color: var(--ink-3); line-height: 1.7; margin-bottom: 16px; }
+.work-cta {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 6px;
+}
+.work-cta::after { content: '→'; transition: transform 0.2s; }
+.work-card:hover .work-cta::after { transform: translateX(4px); }
+
+/* ======================================================
+   MODAL (case studies)
+   ====================================================== */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--bg);
+  border-radius: 4px;
+  max-width: 740px; width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(20px);
+  transition: transform 0.3s;
+  border: 1px solid var(--rule);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-header {
+  background: var(--navy);
+  padding: 28px 32px;
+  position: sticky; top: 0;
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px;
+}
+.modal-header h2 {
+  font-family: var(--serif);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+.modal-close {
+  background: rgba(255,255,255,0.1);
+  border: none; cursor: pointer;
+  color: #fff; width: 32px; height: 32px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.2); }
+.modal-body { padding: 32px; }
+.modal-section { margin-bottom: 28px; }
+.modal-section h3 {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.modal-section p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 10px; }
+.modal-metrics {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-bottom: 28px;
+}
+.m-metric {
+  background: var(--navy);
+  padding: 16px;
+  border-radius: 3px;
+  text-align: center;
+}
+.m-metric .num {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  color: var(--gold-2);
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.m-metric .lbl {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-family: var(--mono);
+}
+.process-steps { display: flex; flex-direction: column; gap: 0; }
+.process-step {
+  display: grid; grid-template-columns: 28px 1fr;
+  gap: 14px; align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.process-step:last-child { border-bottom: none; }
+.step-num {
+  background: var(--navy);
+  color: var(--gold-2);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.step-text { font-size: 0.9rem; color: var(--ink-2); line-height: 1.65; padding-top: 4px; }
+.inline-quote {
+  background: var(--navy);
+  border-left: 3px solid var(--gold-2);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 3px 3px 0;
+}
+.inline-quote p { color: rgba(255,255,255,0.85) !important; font-style: italic; }
+.inline-quote .attr { font-family: var(--mono); font-size: 0.7rem; color: var(--gold-2) !important; font-style: normal; margin-top: 6px; }
+
+/* ======================================================
+   SKILLS / COMPETENCIES
+   ====================================================== */
+#skills { background: var(--bg); }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.skill-group {
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 24px;
+  border-top: 3px solid var(--navy);
+}
+.skill-group h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.skill-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.skill-item:last-child { border-bottom: none; }
+.skill-name { font-size: 0.85rem; color: var(--ink-2); }
+.skill-bar-wrap {
+  width: 80px; height: 4px;
+  background: var(--bg-3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--navy), var(--navy-3));
+  border-radius: 2px;
+  transition: width 1.2s ease;
+  width: 0;
+}
+.skill-bar.animate { /* triggered by JS */ }
+
+/* ======================================================
+   AWARDS
+   ====================================================== */
+#awards { background: var(--navy); }
+.awards-header .section-tag { color: var(--gold-2); }
+.awards-header .section-tag::before { background: var(--gold-2); }
+.awards-header .section-title { color: #fff; }
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.award-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 3px;
+  padding: 28px 22px;
+  text-align: center;
+  transition: all 0.25s;
+}
+.award-card:hover {
+  background: rgba(255,255,255,0.07);
+  transform: translateY(-2px);
+  border-color: rgba(192,155,60,0.4);
+}
+.award-icon { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+.award-name {
+  font-family: var(--serif);
+  color: var(--gold-2);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.award-date { font-family: var(--mono); font-size: 0.7rem; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; margin-bottom: 10px; }
+.award-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+/* ======================================================
+   TOOLS
+   ====================================================== */
+#tools { background: var(--bg-2); }
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+.tool-item {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 8px;
+  transition: all 0.2s;
+}
+.tool-item:hover { border-color: var(--navy); box-shadow: 0 2px 12px rgba(13,35,64,0.08); }
+.tool-cat {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.tool-name { font-size: 0.88rem; font-weight: 500; color: var(--ink); }
+.tool-level {
+  height: 2px; background: var(--bg-3); border-radius: 1px; overflow: hidden;
+}
+.tool-level-fill { height: 100%; background: var(--navy); border-radius: 1px; }
+
+/* ======================================================
+   CV EMBED SECTION
+   ====================================================== */
+#cv { background: var(--bg); }
+.cv-wrapper {
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.cv-toolbar {
+  background: var(--navy);
+  padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cv-toolbar span {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.06em;
+}
+.cv-toolbar .btn-primary { padding: 8px 18px; font-size: 0.78rem; }
+.cv-pdf-viewer {
+  width: 100%;
+  height: 700px;
+  border: none;
+}
+.cv-fallback {
+  padding: 48px 32px;
+  text-align: center;
+}
+.cv-fallback p { color: var(--ink-3); margin-bottom: 20px; }
+
+/* ======================================================
+   CONTACT
+   ====================================================== */
+#contact { background: var(--bg); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.contact-left h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.contact-left p {
+  font-size: 0.95rem; color: var(--ink-3); line-height: 1.75; margin-bottom: 28px;
+}
+.contact-links { display: flex; flex-direction: column; gap: 14px; }
+.contact-link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  transition: all 0.2s;
+  color: var(--ink-2);
+  font-size: 0.88rem;
+}
+.contact-link:hover {
+  border-color: var(--navy);
+  background: var(--bg);
+  box-shadow: 0 2px 12px rgba(13,35,64,0.08);
+  color: var(--navy);
+}
+.contact-link .ci { font-size: 1.1rem; width: 24px; text-align: center; color: var(--gold); }
+.contact-right {
+  background: var(--navy);
+  border-radius: 4px;
+  padding: 36px;
+}
+.contact-right h3 {
+  font-family: var(--serif);
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.contact-right .sub {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--gold-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.preference-list { display: flex; flex-direction: column; gap: 12px; }
+.pref-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 2px;
+  font-size: 0.85rem;
+}
+.pref-label { color: rgba(255,255,255,0.4); font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; min-width: 80px; padding-top: 2px; }
+.pref-value { color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+/* ======================================================
+   FOOTER
+   ====================================================== */
+footer {
+  background: var(--navy-2);
+  padding: 28px var(--gutter);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+footer p {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.06em;
+}
+footer .fl { display: flex; gap: 20px; }
+footer a {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+footer a:hover { color: var(--gold-2); }
+
+/* ======================================================
+   ANIMATIONS / REVEAL
+   ====================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+@media (max-width: 900px) {
+  #hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .timeline::before { left: 0; }
+  .tl-item { grid-template-columns: 1fr; padding-left: 28px; }
+  .tl-gap-item { grid-template-columns: 1fr; padding-left: 28px; }
+  .tl-date { text-align: left; padding-right: 0; padding-bottom: 4px; }
+  .tl-node { left: -9px; }
+  .tl-content { padding-left: 0; }
+  .gap-content { padding-left: 0; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+  .nav-links.mobile-open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 56px; left: 0; right: 0;
+    background: var(--navy);
+    padding: 20px var(--gutter);
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-stats { grid-template-columns: 1fr 1fr 1fr; }
+  .modal-metrics { grid-template-columns: 1fr; }
+  .awards-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============== NAV ============== -->
+<nav id="nav">
+  <div class="nav-logo">Tilak <span>Vaghamshi</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#story">Story</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+  <div class="nav-burger" id="burger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">KYC &amp; Compliance Operations</div>
+    <h1 class="hero-name">Tilak<br><em>Vaghamshi</em></h1>
+    <p class="hero-title">Senior QC Analyst &middot; Operations Team Lead &middot; BFSI / BPO</p>
+    <div class="hero-seeking">
+      <p>
+        <strong>Looking for:</strong> Senior QC Analyst · Team Lead Operations · KYC Specialist<br>
+        <strong>Sectors:</strong> BPO / NBFC / Tier 2 Banks (EXL, WNS, Mphasis, Bajaj Finance, IndusInd)<br>
+        <strong>Locations:</strong> Ahmedabad · Mumbai · Pune · Bengaluru · Hyderabad — open to relocation<br>
+        <span class="availability-dot"></span><strong>Immediately available</strong>
+      </p>
+    </div>
+    <div class="hero-actions">
+      <a href="#cv" class="btn-primary">View Full CV</a>
+      <a href="#work" class="btn-outline">See Work Samples</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="num">99%</span>
+        <span class="lbl">Accuracy<br>19 months</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">14+</span>
+        <span class="lbl">New hires<br>trained</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">60%</span>
+        <span class="lbl">Ramp-up<br>reduction</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-photo-placeholder">TV</div>
+      <h3>Tilak Vaghamshi</h3>
+      <p class="sub">EMP · 2545208 · TEIL</p>
+      <div class="card-badges">
+        <span class="badge gold">4× TCS Award</span>
+        <span class="badge">KYC / CDD / EDD</span>
+        <span class="badge">US Mortgage Ops</span>
+        <span class="badge">RESPA · CFPB · TILA</span>
+        <span class="badge">Black Knight MSP</span>
+        <span class="badge">LSAMS</span>
+      </div>
+      <div class="card-contact">
+        <div class="contact-row">
+          <span class="icon">📱</span>
+          <span>+91 87338 85500</span>
+        </div>
+        <div class="contact-row">
+          <span class="icon">✉️</span>
+          <span>vaghamshitilak99@gmail.com</span>
+        </div>
+        <div class="contact-row">
+          <span class="icon">🔗</span>
+          <span>linkedin.com/in/tilak-vaghamshi1</span>
+        </div>
+        <div class="contact-row">
+          <span class="icon">📍</span>
+          <span>Ahmedabad, Gujarat · Open to relocation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TESTIMONIAL — FRONT AND CENTER ============== -->
+<section id="testimonial">
+  <div class="testimonial-inner">
+    <span class="quote-mark">"</span>
+    <p class="testimonial-text">Quality spikes during onboarding cycles disappeared completely.</p>
+    <p class="testimonial-attr">— Mr. Cooper / Nationstar QC Manager · Quality Audit Review, 2024</p>
+  </div>
+</section>
+
+<!-- ============== STORY / TIMELINE ============== -->
+<section id="story">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">The Journey</div>
+      <h2 class="section-title">From trainee to <em>compliance lead</em><br>in 36 months</h2>
+      <p class="section-lead">Three client engagements. One arc. Promoted 5 months ahead of schedule. Zero escalations across the entire tenure.</p>
+    </div>
+
+    <div class="timeline">
+
+      <!-- ITEM 1: Nationstar -->
+      <div class="tl-item reveal">
+        <div class="tl-date">
+          <span class="period">Nov 2022<br>—<br>Dec 2023</span>
+        </div>
+        <div class="tl-node">
+          <div class="dot"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-client">Nationstar Mortgage LLC · TEIL</div>
+          <h3 class="tl-role">Title Specialist — Document Audit &amp; QC</h3>
+          <p class="tl-body">
+            Day one in US mortgage operations. The job was simple on paper: audit mortgage and title documents, catch errors before they reached legal teams. In 13 months, I processed over 3,000 title records without a single chain-of-title defect passing through. I resolved 95% of contested title cases without escalation — which meant fewer than one in twenty needed a lawyer. And in February 2023, I completed Checker Academy ILT, qualifying as a peer quality reviewer at 4 months into the role.
+          </p>
+          <p class="tl-body">
+            The real lesson from this period: in compliance work, your value is measured in what <em>doesn't</em> happen. Zero defects. Zero violations. That became the standard I held myself to for the next 3 years.
+          </p>
+          <div class="tl-chips">
+            <span class="chip">Title Examination</span>
+            <span class="chip">Document QC</span>
+            <span class="chip">Chain of Title</span>
+            <span class="chip">iAssist</span>
+            <span class="chip">Checker Academy ILT</span>
+            <span class="chip">100% QC Pass Rate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROMO NODE -->
+      <div class="tl-item reveal">
+        <div class="tl-date">
+          <span class="period">Dec 2023</span>
+        </div>
+        <div class="tl-node gold">
+          <div class="dot"></div>
+        </div>
+        <div class="tl-content">
+          <div class="promo-banner">
+            <span class="star">★</span>
+            <span><strong>Promoted to Process Associate</strong> — 13 months in, 5 months ahead of the standard 18-month cycle. Moved from Nationstar title work to Mr. Cooper's foreclosure and compliance team.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM 2: Mr. Cooper -->
+      <div class="tl-item reveal">
+        <div class="tl-date">
+          <span class="period">Dec 2023<br>—<br>Jun 2024</span>
+        </div>
+        <div class="tl-node">
+          <div class="dot"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-client">Mr. Cooper / Nationstar Mortgage · TEIL</div>
+          <h3 class="tl-role">Process Associate — Foreclosure &amp; Compliance</h3>
+          <p class="tl-body">
+            A different problem space. Foreclosure documents are high-stakes — errors don't get caught before legal teams, they <em>become</em> legal problems. I processed 500+ documents a month across FNMA/FHLMC guidelines with zero returns for rework. I also identified an onboarding problem: new associates were taking 8–10 weeks to become productive, and quality dipped during those cycles. I designed and ran a structured training program that cut that window to 3–4 weeks. The QC Manager's quote above was his response.
+          </p>
+          <p class="tl-body">
+            That same quarter, I identified workflow bottlenecks causing the team to handle duplicate effort on exception cases. Standardising those handoffs pushed team throughput up 18% — same headcount, same error rate, more output.
+          </p>
+          <div class="tl-chips">
+            <span class="chip">Foreclosure Processing</span>
+            <span class="chip">FNMA/FHLMC Compliance</span>
+            <span class="chip">Exception Queue Mgmt</span>
+            <span class="chip">18% Productivity Gain</span>
+            <span class="chip">60% Faster Onboarding</span>
+            <span class="chip">SOP Development</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM 3: Rocket Companies -->
+      <div class="tl-item reveal">
+        <div class="tl-date">
+          <span class="period">Jun 2024<br>—<br>Jan 2026</span>
+        </div>
+        <div class="tl-node gold">
+          <div class="dot"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-client">Rocket Companies, Inc. · TEIL</div>
+          <h3 class="tl-role">KYC &amp; Mortgage Operations Specialist</h3>
+          <p class="tl-body">
+            Rocket Companies is one of the largest retail mortgage lenders in the US. The work here was full-cycle KYC: 45+ cases a day, every case touching identity, ownership, or sensitive account data. SSN corrections. Death notifications. Ownership transfers. VA loan compliance. Fraud detection.
+          </p>
+          <p class="tl-body">
+            Over 19 consecutive months: 99% accuracy, 100% SLA compliance, zero client-escalated errors. I flagged and blocked 10+ high-risk or fraudulent accounts monthly through CDD/EDD review — each one documented, double-signed, and forwarded to investigations. I mentored 4 new analysts; all 4 hit full independent productivity within 30 days.
+          </p>
+          <p class="tl-body">
+            I left in January 2026 on my own terms — after receiving three awards in 18 months — to focus on transitioning into the Indian BFSI / compliance market where KYC and operations are the core job function, not a support role in a mortgage servicing chain.
+          </p>
+          <div class="tl-chips">
+            <span class="chip">KYC / CDD / EDD</span>
+            <span class="chip">Fraud Detection</span>
+            <span class="chip">Black Knight MSP</span>
+            <span class="chip">LSAMS · Dynamics 365</span>
+            <span class="chip">RESPA · CFPB · TILA</span>
+            <span class="chip">VA Loan Compliance</span>
+            <span class="chip">99% Accuracy · 19mo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAP: Jan 2026 → now -->
+      <div class="tl-gap-item reveal">
+        <div class="tl-date" style="padding-right:40px;text-align:right;padding-top:4px;">
+          <span class="period" style="font-family:var(--mono);font-size:0.72rem;color:var(--ink-4);letter-spacing:0.05em;display:block;line-height:1.4;">Jan 2026<br>—<br>Present</span>
+        </div>
+        <div class="tl-node" style="position:absolute;left:152px;top:8px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px dashed var(--gold);display:flex;align-items:center;justify-content:center;z-index:2;">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--gold);"></div>
+        </div>
+        <div class="gap-content" style="padding-left:48px;">
+          <div class="gap-box">
+            <h4>Deliberate transition — not downtime</h4>
+            <p>
+              After 3+ years in high-volume US mortgage operations, I made a deliberate decision to step back from shift-based BPO work (TCS ran rotational schedules, often 6 AM–2 AM windows) and transition into the Indian BFSI and compliance sector — where KYC and risk operations are the core function, not a backend support layer. I've used this period to complete an AI &amp; data management course through online self-paced study (fitting around an irregular personal schedule), refresh my understanding of Indian regulatory frameworks (RBI KYC norms, PMLA, CKYCRR), and actively target roles where compliance experience from US mortgage operations translates directly: KYC Analysts, Operations Associates, and QC Leads at NBFCs, Tier 2 banks, and established BPOs. I'm available immediately.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== WORK SAMPLES ============== -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Case Studies</div>
+      <h2 class="section-title">Real problems.<br><em>Documented results.</em></h2>
+      <p class="section-lead">Click any card to see the full case: the problem, the process, the outcome — and the numbers that back it up.</p>
+    </div>
+    <div class="work-grid">
+
+      <!-- Case 1: Onboarding redesign -->
+      <div class="work-card reveal" onclick="openModal('modal-onboarding')">
+        <div class="work-card-header">
+          <div class="work-label">Mr. Cooper · Dec 2023 – Jun 2024</div>
+          <div class="work-title">Onboarding Workflow Redesign — 60% Faster Ramp-Up</div>
+        </div>
+        <div class="work-card-body">
+          <div class="work-metric-row">
+            <div class="work-metric">
+              <span class="num">60%</span>
+              <span class="lbl">Ramp reduction</span>
+            </div>
+            <div class="work-metric">
+              <span class="num">10+</span>
+              <span class="lbl">Associates trained</span>
+            </div>
+            <div class="work-metric">
+              <span class="num">0</span>
+              <span class="lbl">Quality fails</span>
+            </div>
+          </div>
+          <p>New hires were taking 8–10 weeks to reach independent productivity. Quality dipped every onboarding cycle. I built a structured training program from scratch that cut time-to-competency to 3–4 weeks — with zero quality failures in month one across every cohort.</p>
+          <div class="work-cta">View full case study</div>
+        </div>
+      </div>
+
+      <!-- Case 2: Fraud detection framework -->
+      <div class="work-card reveal reveal-delay-1" onclick="openModal('modal-fraud')">
+        <div class="work-card-header">
+          <div class="work-label">Rocket Companies · Jun 2024 – Jan 2026</div>
+          <div class="work-title">3-Layer Fraud Detection Framework — 10+ Flags/Month</div>
+        </div>
+        <div class="work-card-body">
+          <div class="work-metric-row">
+            <div class="work-metric">
+              <span class="num">10+</span>
+              <span class="lbl">Flags/month</span>
+            </div>
+            <div class="work-metric">
+              <span class="num">0</span>
+              <span class="lbl">False positives</span>
+            </div>
+            <div class="work-metric">
+              <span class="num">19mo</span>
+              <span class="lbl">Sustained</span>
+            </div>
+          </div>
+          <p>Developed a repeatable three-layer verification approach for high-risk mortgage accounts — cross-referencing identity, document authenticity, and property records before any case entered the processing queue. Maintained zero false-positive client escalations across 19 months.</p>
+          <div class="work-cta">View full case study</div>
+        </div>
+      </div>
+
+      <!-- Case 3: Productivity improvement -->
+      <div class="work-card reveal reveal-delay-2" onclick="openModal('modal-productivity')">
+        <div class="work-card-header">
+          <div class="work-label">Mr. Cooper · Dec 2023 – Jun 2024</div>
+          <div class="work-title">Bottleneck Analysis — 18% Team Productivity Gain</div>
+        </div>
+        <div class="work-card-body">
+          <div class="work-metric-row">
+            <div class="work-metric">
+              <span class="num">18%</span>
+              <span class="lbl">More throughput</span>
+            </div>
+            <div class="work-metric">
+              <span class="num">0</span>
+              <span class="lbl">Headcount added</span>
+            </div>
+            <div class="work-metric">
+              <span class="num">0</span>
+              <span class="lbl">Error rate rise</span>
+            </div>
+          </div>
+          <p>Mapped exception queue handoffs and identified where teams were duplicating effort on complex foreclosure cases. Standardised the routing logic and documented it into an SOP. Team throughput increased 18% within the same period — no additional staff, no drop in quality.</p>
+          <div class="work-cta">View full case study</div>
+        </div>
+      </div>
+
+      <!-- Case 4: KYC SOP -->
+      <div class="work-card reveal reveal-delay-3" onclick="openModal('modal-kycsop')">
+        <div class="work-card-header">
+          <div class="work-label">Rocket Companies · Jun 2024 – Jan 2026</div>
+          <div class="work-title">KYC Verification SOP — Team Reference Standard</div>
+        </div>
+        <div class="work-card-body">
+          <div class="work-metric-row">
+            <div class="work-metric">
+              <span class="num">45+</span>
+              <span class="lbl">Cases/day</span>
+            </div>
+            <div class="work-metric">
+              <span class="num">99%</span>
+              <span class="lbl">Accuracy</span>
+            </div>
+            <div class="work-metric">
+              <span class="num">4</span>
+              <span class="lbl">Analysts onboarded</span>
+            </div>
+          </div>
+          <p>Authored end-to-end KYC verification SOPs and step-by-step checklists covering identity authentication, document verification, fraud flag protocols, and restricted-state routing. Became the team's reference standard — used to onboard all 4 new analysts during tenure.</p>
+          <div class="work-cta">View full case study</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== MODALS ============== -->
+
+<!-- Onboarding Modal -->
+<div class="modal-overlay" id="modal-onboarding" onclick="closeModalIfBg(event, 'modal-onboarding')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Onboarding Workflow Redesign</h2>
+      <button class="modal-close" onclick="closeModal('modal-onboarding')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-metrics">
+        <div class="m-metric"><span class="num">60%</span><span class="lbl">Ramp reduction</span></div>
+        <div class="m-metric"><span class="num">10+</span><span class="lbl">Trained</span></div>
+        <div class="m-metric"><span class="num">0</span><span class="lbl">Failures month 1</span></div>
+      </div>
+      <div class="modal-section">
+        <h3>The Problem</h3>
+        <p>At Mr. Cooper, new associates joining the foreclosure and compliance team were taking 8–10 weeks to reach independent productivity. During those ramp-up periods, QC scores for the broader team visibly dipped — the team was absorbing errors from trainees who didn't yet have the full picture of exception handling, document validation standards, or escalation logic.</p>
+        <p>There was no structured onboarding curriculum. Training was ad hoc, largely shadow-based, and inconsistent between cohorts.</p>
+      </div>
+      <div class="inline-quote">
+        <p>"Quality spikes during onboarding cycles disappeared completely."</p>
+        <p class="attr">— Mr. Cooper / Nationstar QC Manager · 2024</p>
+      </div>
+      <div class="modal-section">
+        <h3>What I Built</h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-text"><strong>Audit of failure patterns:</strong> Reviewed error logs from the previous three onboarding cohorts to identify which task categories produced the most first-month mistakes — exception routing, document type identification, and restricted-state flagging were the main sources.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-text"><strong>Structured curriculum:</strong> Built a week-by-week training plan with clear competency gates. Week 1–2 covered document types and system navigation. Week 3 introduced live case processing with review checkpoints. Week 4 covered exception handling and escalation paths independently.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-text"><strong>Checklists and reference materials:</strong> Created step-by-step verification checklists for each case type, so new hires weren't relying on memory for compliance-critical decisions. These became the team's reference standard.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <div class="step-text"><strong>Buddy review protocol:</strong> Introduced a structured peer review window in week 3, where trainees processed real cases but had output checked before submission. This identified gaps early without creating downstream errors.</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h3>Outcome</h3>
+        <p>Across all cohorts trained under the new program: time to full independent productivity dropped from 8–10 weeks to 3–4 weeks — a 60% reduction. Zero quality failures recorded in any trainee's first month of independent processing. The QC Manager specifically noted that onboarding-cycle quality dips, which had been a recurring pattern, stopped entirely.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fraud Modal -->
+<div class="modal-overlay" id="modal-fraud" onclick="closeModalIfBg(event, 'modal-fraud')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>3-Layer Fraud Detection Framework</h2>
+      <button class="modal-close" onclick="closeModal('modal-fraud')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-metrics">
+        <div class="m-metric"><span class="num">10+</span><span class="lbl">Flags/month</span></div>
+        <div class="m-metric"><span class="num">0</span><span class="lbl">False positives</span></div>
+        <div class="m-metric"><span class="num">19mo</span><span class="lbl">Sustained</span></div>
+      </div>
+      <div class="modal-section">
+        <h3>The Problem</h3>
+        <p>In KYC operations for Rocket Companies, fraudulent accounts and high-risk identity cases weren't always obvious at intake. Forged deeds, identity mismatches, and SSN manipulation could pass a surface check if the reviewer wasn't applying systematic cross-verification — and one missed flag meant the case entered the processing queue and potentially closed without proper scrutiny.</p>
+      </div>
+      <div class="modal-section">
+        <h3>The Framework</h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">L1</div>
+            <div class="step-text"><strong>Identity Layer:</strong> Every case screened at intake for PII consistency — SSN cross-referenced against internal records, government databases, and any supporting identity documents (passport, driver's licence, marriage certificate). Any mismatch flagged for L2 before processing.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">L2</div>
+            <div class="step-text"><strong>Document Layer:</strong> Legal documents — Deed of Trust, Promissory Notes, Quit Claim Deeds, Gift Deeds, Warranty Deeds — verified against county records, court verification channels, and government portals. Signature patterns, notary stamps, and recording dates checked for anomalies.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">L3</div>
+            <div class="step-text"><strong>Property Layer:</strong> Property type, assessed value, ownership history, and tax records cross-validated using county portals, NetronLine, Zillow, and Realtor.com. Discrepancies between what the customer claimed and what records showed triggered a fraud review.</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h3>When a Flag Was Raised</h3>
+        <p>On identifying a high-risk account: conducted thorough internal re-verification, compiled a complete evidence document (reason for flag, supporting data from each layer), coordinated double sign-off with the client, permanently closed the case from the operations queue, blocked it from re-entering, and forwarded it to the internal investigations team. This process ensured zero false-positive escalations — every flagged case had documented evidence before it went to the client.</p>
+      </div>
+      <div class="modal-section">
+        <h3>Outcome</h3>
+        <p>Maintained a consistent 10+ fraud flags per month across the full 19-month engagement, with zero client-escalated false positives. Zero cases missed that were later identified by the client's own team.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Productivity Modal -->
+<div class="modal-overlay" id="modal-productivity" onclick="closeModalIfBg(event, 'modal-productivity')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Bottleneck Analysis — 18% Productivity Gain</h2>
+      <button class="modal-close" onclick="closeModal('modal-productivity')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-metrics">
+        <div class="m-metric"><span class="num">18%</span><span class="lbl">Throughput increase</span></div>
+        <div class="m-metric"><span class="num">0</span><span class="lbl">Headcount added</span></div>
+        <div class="m-metric"><span class="num">0</span><span class="lbl">Rise in error rate</span></div>
+      </div>
+      <div class="modal-section">
+        <h3>The Problem</h3>
+        <p>During the Mr. Cooper foreclosure compliance engagement, I noticed that complex exception cases — those requiring escalation or multi-step review — were regularly causing the same duplication: two team members would begin review on the same case independently because the routing logic for exception queues wasn't clearly defined. This wasted processing time and created version control problems when both reviewers updated records.</p>
+      </div>
+      <div class="modal-section">
+        <h3>The Fix</h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-text"><strong>Mapping the exception flow:</strong> Documented how exception cases were currently routed — from identification through to resolution — and marked every point where duplicated effort was occurring. Found three recurring handoff failures in the queue management process.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-text"><strong>Standardised routing rules:</strong> Defined clear ownership logic for each exception category. Each case type got a single designated reviewer role, with a defined handoff point if escalation was needed. Ambiguity in who owned a case was removed.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-text"><strong>Documented in SOP:</strong> Formalised the new routing logic into a team SOP so it wasn't dependent on individuals knowing the convention — it became the written standard, reviewable by anyone.</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h3>Outcome</h3>
+        <p>Team throughput increased 18% within the engagement period — measured against the same case volume, same headcount, same error rate targets. The gain came purely from eliminating duplicated effort on exception cases. No quality trade-off was made to achieve the output increase.</p>
+        <p><em>Note on baseline: the 18% figure reflects the improvement in team throughput relative to the pre-change baseline measured during the same engagement period. I am prepared to discuss the specific measurement methodology in interview.</em></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KYC SOP Modal -->
+<div class="modal-overlay" id="modal-kycsop" onclick="closeModalIfBg(event, 'modal-kycsop')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>KYC Verification SOP</h2>
+      <button class="modal-close" onclick="closeModal('modal-kycsop')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-metrics">
+        <div class="m-metric"><span class="num">45+</span><span class="lbl">Cases/day</span></div>
+        <div class="m-metric"><span class="num">99%</span><span class="lbl">Accuracy</span></div>
+        <div class="m-metric"><span class="num">4</span><span class="lbl">Analysts trained on it</span></div>
+      </div>
+      <div class="modal-section">
+        <h3>Why I Built It</h3>
+        <p>When I joined the Rocket Companies KYC team, there was no centralised procedure document for the specific case types we handled — death notifications, ownership transfers, SSN corrections, VA loan compliance. Team members were relying on informal knowledge and varied approaches. With 45+ cases per day in a compliance-sensitive environment, that inconsistency was a liability.</p>
+      </div>
+      <div class="modal-section">
+        <h3>What the SOP Covered</h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-text"><strong>Identity verification protocol:</strong> Step-by-step guide for authenticating SSN, driver's licence, passport, and marriage certificates — including cross-reference sources (county records, government portals) and specific check criteria for each document type.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-text"><strong>Document authentication checklist:</strong> Case-type-specific checklists for every document category handled — mortgage deeds, probate records, transfer deeds, VA certificates — with required verification steps, red flags, and escalation triggers.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-text"><strong>Fraud flag procedure:</strong> Documented the full 3-layer flag-to-closure process, including evidence compilation requirements, client sign-off protocol, and investigation team handoff steps.</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <div class="step-text"><strong>Restricted-state routing:</strong> Clear procedure for identifying compliance-restricted states (Washington, West Virginia, Nevada) during case processing and routing immediately to the dedicated compliance team — preventing processing violations.</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h3>Impact</h3>
+        <p>The SOP became the team's standard reference for all KYC and mortgage account processing. All 4 analysts I onboarded were trained using this document — reaching full independent productivity within 30 days with zero quality failures. It also served as the source of truth during the fraud flag process, ensuring consistent evidence compilation across every high-risk case.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============== SKILLS ============== -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Competencies</div>
+      <h2 class="section-title">What I bring to <em>day one</em></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <h3>KYC / AML / Compliance</h3>
+        <div class="skill-item"><span class="skill-name">Know Your Customer (KYC)</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="97"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Customer Due Diligence (CDD)</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="96"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Enhanced Due Diligence (EDD)</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="92"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Fraud Detection</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="94"></div></div></div>
+        <div class="skill-item"><span class="skill-name">AML Support / SARs Awareness</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div></div>
+        <div class="skill-item"><span class="skill-name">PEP &amp; Sanctions Screening</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="78"></div></div></div>
+      </div>
+      <div class="skill-group reveal reveal-delay-1">
+        <h3>Operations &amp; Quality</h3>
+        <div class="skill-item"><span class="skill-name">Document QC Review</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="99"></div></div></div>
+        <div class="skill-item"><span class="skill-name">SOP Development</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="95"></div></div></div>
+        <div class="skill-item"><span class="skill-name">New Hire Training</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="93"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Exception Queue Management</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="96"></div></div></div>
+        <div class="skill-item"><span class="skill-name">SLA / TAT Management</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="99"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Process Improvement</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div></div>
+      </div>
+      <div class="skill-group reveal reveal-delay-2">
+        <h3>Regulatory Frameworks</h3>
+        <div class="skill-item"><span class="skill-name">RESPA</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="95"></div></div></div>
+        <div class="skill-item"><span class="skill-name">CFPB Guidelines</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="92"></div></div></div>
+        <div class="skill-item"><span class="skill-name">TILA</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div></div>
+        <div class="skill-item"><span class="skill-name">FNMA / FHLMC</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="94"></div></div></div>
+        <div class="skill-item"><span class="skill-name">VA Program Guidelines</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div></div>
+        <div class="skill-item"><span class="skill-name">RBI KYC / PMLA (Indian)</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="72"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TOOLS ============== -->
+<section id="tools" style="padding-top:0;">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Systems &amp; Tools</div>
+      <h2 class="section-title">Production systems,<br><em>not just familiarity</em></h2>
+      <p class="section-lead">Every tool listed below was used daily in a live client environment — not in a training lab.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-item reveal">
+        <div class="tool-cat">Core Platform</div>
+        <div class="tool-name">Black Knight MSP</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:97%"></div></div>
+      </div>
+      <div class="tool-item reveal reveal-delay-1">
+        <div class="tool-cat">Loan Servicing</div>
+        <div class="tool-name">LSAMS</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:95%"></div></div>
+      </div>
+      <div class="tool-item reveal reveal-delay-2">
+        <div class="tool-cat">Document Mgmt</div>
+        <div class="tool-name">iAssist</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:93%"></div></div>
+      </div>
+      <div class="tool-item reveal">
+        <div class="tool-cat">CRM</div>
+        <div class="tool-name">Dynamics 365</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:88%"></div></div>
+      </div>
+      <div class="tool-item reveal reveal-delay-1">
+        <div class="tool-cat">ITSM</div>
+        <div class="tool-name">Remedy</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:90%"></div></div>
+      </div>
+      <div class="tool-item reveal reveal-delay-2">
+        <div class="tool-cat">Property Research</div>
+        <div class="tool-name">NetronLine</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:94%"></div></div>
+      </div>
+      <div class="tool-item reveal">
+        <div class="tool-cat">Property Verify</div>
+        <div class="tool-name">County Search Portals</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:96%"></div></div>
+      </div>
+      <div class="tool-item reveal reveal-delay-1">
+        <div class="tool-cat">Office</div>
+        <div class="tool-name">MS Excel (Pivot / VLOOKUP)</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:85%"></div></div>
+      </div>
+      <div class="tool-item reveal reveal-delay-2">
+        <div class="tool-cat">Office</div>
+        <div class="tool-name">Google Workspace</div>
+        <div class="tool-level"><div class="tool-level-fill" style="width:88%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== AWARDS ============== -->
+<section id="awards">
+  <div class="section-inner">
+    <div class="section-header awards-header reveal">
+      <div class="section-tag">Recognition</div>
+      <h2 class="section-title" style="color:#fff;">Four TCS awards in <em style="color:var(--gold-2)">36 months</em></h2>
+      <p class="section-lead" style="color:rgba(255,255,255,0.5);">Every award was for a different dimension of performance — domain excellence, AI contribution, individual output, and delivery quality.</p>
+    </div>
+    <div class="awards-grid">
+      <div class="award-card reveal">
+        <span class="award-icon">🏅</span>
+        <div class="award-name">Elevate Wings Award</div>
+        <div class="award-date">Sep 2025 · Domain Excellence</div>
+        <div class="award-desc">BPS Mortgages Track 2 — recognising sustained domain expertise and performance quality across the Rocket Companies engagement.</div>
+      </div>
+      <div class="award-card reveal reveal-delay-1">
+        <span class="award-icon">🤖</span>
+        <div class="award-name">tcsAI Spark Award</div>
+        <div class="award-date">Sep 2025 · AI Initiative</div>
+        <div class="award-desc">Recognised for contribution to TCS AI initiatives and practical application of generative AI tools within compliance operations workflows.</div>
+      </div>
+      <div class="award-card reveal reveal-delay-2">
+        <span class="award-icon">⚡</span>
+        <div class="award-name">On The Spot Award</div>
+        <div class="award-date">Mar 2025 · Individual Performance</div>
+        <div class="award-desc">Exceptional individual performance recognition — awarded for measurable contribution beyond standard KPIs during a peak operations period.</div>
+      </div>
+      <div class="award-card reveal reveal-delay-3">
+        <span class="award-icon">💎</span>
+        <div class="award-name">TCS Gems Certificate</div>
+        <div class="award-date">Jun 2023 · Delivery Quality</div>
+        <div class="award-desc">Awarded by SGM-HR Samir Vyas for outstanding delivery quality and consistent above-target performance during the Nationstar title examination engagement.</div>
+      </div>
+    </div>
+    <!-- Education / Certs -->
+    <div style="margin-top:56px; padding: 32px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px;" class="reveal">
+      <div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:20px;">Education &amp; Certifications</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+        <div style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="font-family:var(--serif);color:#fff;font-size:1rem;margin-bottom:3px;">BBA — Business Administration</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);">JG University, Ahmedabad · 2019–2022</div>
+        </div>
+        <div style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="font-family:var(--serif);color:#fff;font-size:1rem;margin-bottom:3px;">Checker Academy ILT</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);">Quality Assurance · TCS eServe · Feb 2023</div>
+        </div>
+        <div style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="font-family:var(--serif);color:#fff;font-size:1rem;margin-bottom:3px;">US Regulatory Compliance</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);">TCS iEvolve Internal · BFSI Domain</div>
+        </div>
+        <div style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="font-family:var(--serif);color:#fff;font-size:1rem;margin-bottom:3px;">Generative AI — LinkedIn Learning</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);">NASBA CPE Certified · Registry #140940 · Sep 2024</div>
+        </div>
+        <div style="padding:14px 0;">
+          <div style="font-family:var(--serif);color:#fff;font-size:1rem;margin-bottom:3px;">BPS Domain Assessment</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);">TCS iON · Compliance &amp; Fraud Management</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CV EMBED ============== -->
+<section id="cv">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Curriculum Vitae</div>
+      <h2 class="section-title">Full CV — <em>view or download</em></h2>
+      <p class="section-lead">ATS-optimised. 87/100 score. Every metric verified and defensible in interview.</p>
+    </div>
+    <div class="cv-wrapper reveal">
+      <div class="cv-toolbar">
+        <span>Tilak_Vaghamshi_CV.pdf · KYC &amp; Compliance Operations</span>
+        <a href="Tilak_Vaghamshi_CV.pdf" download class="btn-primary">↓ Download CV</a>
+      </div>
+      <!-- Try embed; fallback shown if browser blocks -->
+      <div id="cv-embed-container">
+        <iframe
+          id="cv-iframe"
+          class="cv-pdf-viewer"
+          src="Tilak_Vaghamshi_CV.pdf"
+          title="Tilak Vaghamshi CV"
+          onerror="showCVFallback()"
+        ></iframe>
+        <div class="cv-fallback" id="cv-fallback" style="display:none;">
+          <p>Your browser didn't load the PDF preview inline. You can download it directly instead.</p>
+          <a href="Tilak_Vaghamshi_CV.pdf" download class="btn-primary">↓ Download CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTACT ============== -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <h2>Let's talk about the right role.</h2>
+        <p>I'm looking for a Senior QC Analyst, KYC Specialist, or Team Lead Operations role in BFSI, NBFC, or BPO. If you're hiring for any of those — or you're a recruiter who places into those functions — I'd like to speak this week.</p>
+        <p>Available immediately. Willing to relocate. No notice period.</p>
+        <div class="contact-links">
+          <a href="tel:+918733885500" class="contact-link">
+            <span class="ci">📱</span>
+            <span>+91 87338 85500</span>
+          </a>
+          <a href="mailto:vaghamshitilak99@gmail.com" class="contact-link">
+            <span class="ci">✉️</span>
+            <span>vaghamshitilak99@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/tilak-vaghamshi1" target="_blank" class="contact-link">
+            <span class="ci">🔗</span>
+            <span>linkedin.com/in/tilak-vaghamshi1</span>
+          </a>
+          <a href="Tilak_Vaghamshi_CV.pdf" download class="contact-link">
+            <span class="ci">📄</span>
+            <span>Download CV (PDF)</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-right reveal reveal-delay-1">
+        <h3>What I'm looking for</h3>
+        <div class="sub">Role preferences — updated Apr 2026</div>
+        <div class="preference-list">
+          <div class="pref-item">
+            <span class="pref-label">Roles</span>
+            <span class="pref-value">Senior QC Analyst · KYC Analyst · Team Lead Operations · Process Associate</span>
+          </div>
+          <div class="pref-item">
+            <span class="pref-label">Sectors</span>
+            <span class="pref-value">NBFC (Bajaj Finance, Cholamandalam) · Tier 2 Banks (IndusInd, IDFC First) · BPO (EXL, WNS, Mphasis, Accenture)</span>
+          </div>
+          <div class="pref-item">
+            <span class="pref-label">Locations</span>
+            <span class="pref-value">Ahmedabad (base) · Open to Mumbai, Pune, Bengaluru, Hyderabad</span>
+          </div>
+          <div class="pref-item">
+            <span class="pref-label">Shifts</span>
+            <span class="pref-value">Day / Evening preferred · 6 AM – 11 PM IST</span>
+          </div>
+          <div class="pref-item">
+            <span class="pref-label">Availability</span>
+            <span class="pref-value"><span class="availability-dot"></span>Immediate · No notice period</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <p>© 2026 Tilak Vaghamshi · KYC &amp; Compliance Operations</p>
+  <div class="fl">
+    <a href="mailto:vaghamshitilak99@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/tilak-vaghamshi1" target="_blank">LinkedIn</a>
+    <a href="Tilak_Vaghamshi_CV.pdf" download>Download CV</a>
+  </div>
+</footer>
+
+<!-- ============== JAVASCRIPT ============== -->
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile nav toggle
+function toggleNav() {
+  const links = document.getElementById('navLinks');
+  links.classList.toggle('mobile-open');
+}
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => revealObserver.observe(el));
+
+// Skill bars
+const skillBars = document.querySelectorAll('.skill-bar');
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = e.target;
+      const w = target.getAttribute('data-width');
+      setTimeout(() => { target.style.width = w + '%'; }, 200);
+      barObserver.unobserve(target);
+    }
+  });
+}, { threshold: 0.3 });
+skillBars.forEach(b => barObserver.observe(b));
+
+// Modal functions
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalIfBg(e, id) {
+  if (e.target.classList.contains('modal-overlay')) closeModal(id);
+}
+// ESC to close modals
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+
+// CV fallback
+function showCVFallback() {
+  document.getElementById('cv-iframe').style.display = 'none';
+  document.getElementById('cv-fallback').style.display = 'block';
+}
+
+// Hero entrance animation
+document.addEventListener('DOMContentLoaded', () => {
+  const heroLeft = document.querySelector('.hero-left');
+  heroLeft.style.opacity = '0';
+  heroLeft.style.transform = 'translateY(30px)';
+  heroLeft.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  setTimeout(() => {
+    heroLeft.style.opacity = '1';
+    heroLeft.style.transform = 'translateY(0)';
+  }, 200);
+  const heroCard = document.querySelector('.hero-card');
+  if (heroCard) {
+    heroCard.style.opacity = '0';
+    heroCard.style.transform = 'translateY(30px)';
+    heroCard.style.transition = 'opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s';
+    setTimeout(() => {
+      heroCard.style.opacity = '1';
+      heroCard.style.transform = 'translateY(0)';
+    }, 400);
+  }
+});
+</script>
+
+</body>
+</html>
